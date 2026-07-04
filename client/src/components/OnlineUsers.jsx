@@ -1,0 +1,15 @@
+export default function OnlineUsers({ users, currentUser }) {
+  return (
+    <div className="online-users">
+      <h3>Online ({users.length})</h3>
+      <ul>
+        {users.map((u) => (
+          <li key={u.username}>
+            <span className="status-dot" /> {u.username}
+            {u.username === currentUser && ' (you)'}
+          </li>
+        ))}
+      </ul>
+    </div>
+  );
+}
