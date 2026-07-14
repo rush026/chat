@@ -28,28 +28,22 @@ export default function ChatApp() {
   }
 
   if (!joined) {
-    return (
-      <div className="login-screen">
+  return (
+    <div className="login-screen">
+      <div className="login-card">
+        <div className="login-logo">💬</div>
+        <h1>ChatWave</h1>
+        <p className="login-subtitle">Real-time. Encrypted. Simple.</p>
         <input
-          placeholder="Enter username"
+          placeholder="Enter your username"
           value={username}
           onChange={(e) => setUsername(e.target.value)}
           onKeyDown={(e) => e.key === 'Enter' && handleJoin()}
+          autoFocus
         />
         <button onClick={handleJoin}>Join Chat</button>
       </div>
-    );
-  }
-
-  return (
-    <div className="chat-app">
-      <OnlineUsers users={onlineUsers} currentUser={username} />
-      <ChatRoom
-        roomId={roomId}
-        username={username}
-        secretKey={secretKey}
-        peerPublicKeys={peerKeys}
-      />
     </div>
   );
+}
 }
