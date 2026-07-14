@@ -30,6 +30,7 @@ export default function ChatRoom({ roomId, username, secretKey, peerPublicKeys }
     });
 
     socket.on('message:broadcast', (msg) => {
+      console.log('Received:', msg);
       setMessages((prev) => [...prev, decryptIncoming(msg)]);
     });
 
