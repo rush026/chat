@@ -1,6 +1,6 @@
 // db/godb-client.js
 const axios = require('axios');
-const GODB_URL = process.env.GODB_URL || 'http://localhost:8080';
+const GODB_URL = 'https://god-b.onrender.com';
 
 const godb = {
     set: (key, value) => axios.put(`${GODB_URL}/kv/${key}`, { value: JSON.stringify(value) }),

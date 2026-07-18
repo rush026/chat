@@ -8,7 +8,7 @@ const server = http.createServer(app);
 
 const io = new Server(server, {
     cors: {
-        origin: 'http://localhost:5173', // tumhara Vite client URL
+        origin: process.env.CLIENT_URL || 'http://localhost:5173',
         methods: ['GET', 'POST'],
     },
 });
